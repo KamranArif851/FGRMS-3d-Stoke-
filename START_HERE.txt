@@ -1,0 +1,114 @@
+GENERAL FGMRES STOKES CODE - START HERE
+=====================================
+This version solves only with FGMRES + block Schur + AMG.
+It compares the iterative solution with the analytical solution.
+No full-system LU solver or LU comparison is used.
+FGMRES is flexible GMRES, suitable for the varying inner block solves.
+
+1. SEE THE RESULTS NOW
+Double-click VIEW_PLOTS.bat or gallery.html.
+Blue line = analytical solution. Red dots = iterative numerical solution.
+Profiles include errors; surfaces show exact, numerical and absolute error.
+The delivered study_gallery.html also shows the three-mesh study.
+
+2. CHANGE THE DOMAIN
+Open input.cfg in VS Code or Notepad. Change, for example:
+    lengths_km = 600 400 200
+The three numbers are Lx, Ly, Lz in km. All must be positive.
+The manufactured forcing and reference solution adapt to these lengths.
+
+3. CHANGE THE MESH USING ELEMENT COUNTS
+    mesh_input = elements
+    elements = 4 4 3
+    velocity_degree = 4
+This gives 17 x 17 x 13 = 3757 velocity nodes and
+13 x 13 x 10 = 1690 pressure nodes.
+The velocity_nodes line is ignored in this mode.
+
+OR CHANGE THE MESH USING NODE COUNTS
+    mesh_input = nodes
+    velocity_nodes = 17 17 13
+    velocity_degree = 4
+These are counts ALONG x,y,z, not the total number of nodes.
+The program calculates elements = 4 4 3. The elements line is ignored.
+For degree p, each node count must equal p*elements + 1.
+You cannot independently choose incompatible node and element counts.
+At degree 4, valid node counts per direction are 9,13,17,21,25,...
+At least two elements per direction are required; degree can be 2,3 or 4.
+
+4. CHANGE ITERATION SETTINGS (also in input.cfg)
+    relative_tolerance = 1e-12
+    max_iterations = 600
+    restart = 60
+max_iterations is a LIMIT, not a requirement to perform exactly that many.
+The solver stops early once its true relative residual meets tolerance.
+If the limit is too small, the program reports an error and the wrapper
+stops; it does not present the unfinished solve as a converged result.
+A tolerance such as 1e-8 is looser; 1e-12 is tighter.
+A larger restart uses more memory. Valid restart range is 2..300.
+The maximum iteration setting is 1..100000.
+Residual history remains available even if convergence fails.
+
+5. OTHER INPUTS
+velocity_scale_cm_year : physical velocity scale, positive
+eta0_Pa_s             : reference viscosity, positive
+pressure_mean_Pa      : pressure gauge, may be nonzero
+viscosity_model       : constant or linear for exact verification
+benchmark             : trigonometric or polynomial
+velocity_degree       : 2, 3 or 4 (pressure degree is one lower)
+quadrature            : integration points per axis, at least degree+1
+error_quadrature      : error integration points per axis, at least degree+2
+max_equations         : memory safety limit; not a requested node count
+Both quadrature counts must be at most 10.
+The advanced inner-block tolerances and iteration limits are labelled
+in input.cfg. Keep their defaults until you understand their effect.
+For these analytical tests, keep mode=manufactured and all walls exact
+or noslip. Arbitrary physical boundary conditions need a matching new
+analytical solution and forcing; this verification executable rejects them.
+
+6. RUN AFTER EDITING
+Save input.cfg, then double-click run.bat.
+Wait for compilation, assembly, solve, error integration and plotting.
+The browser opens gallery.html when everything succeeds.
+If an error appears, the terminal stays open so you can read it.
+The existing gallery is from the last successful run; a failed run does
+not mean that the old gallery represents your new input.
+The solver saves results/main_input.cfg as the input snapshot used for
+plotting, so later edits to input.cfg do not relabel an old solution.
+
+7. RUN IN THE VS CODE TERMINAL IN THIS FOLDER
+    .\build.bat
+    .\iteration.exe input.cfg results/main
+    .\comparison_plots.exe results/main_input.cfg results/main
+    .\VIEW_PLOTS.bat
+Enter one command at a time. Stop if a command reports an error.
+Do not compile all .c files together: shared files are included by the
+main solver and plot programs.
+GCC is required. build.bat uses E:\install_c\bin\gcc.exe, otherwise gcc
+on PATH; edit its CC setting for a different installation.
+No Python, PyTorch or Jupyter is needed.
+
+8. RUN THE THREE-MESH STUDY
+Double-click run_study.bat to run the configurations in cases/q4_*.cfg.
+It produces the study gallery and node_comparison.csv.
+This study is separate from input.cfg. All three cases use the same
+physical problem and degree, so their FEM errors can be compared.
+Generated figures are overwritten on subsequent runs. Copy any results
+and figures you wish to preserve before changing the input again.
+
+9. UNDERSTAND THE ERROR
+The solver residual measures how well the discrete matrix equation is
+satisfied. FEM error measures the difference from the analytical solution.
+More iterations after convergence will not remove mesh approximation error.
+Refine the mesh or raise degree to investigate FEM error reduction.
+The delivered default case has velocity relative L2 error about 0.0442%
+and pressure relative L2 error about 0.1505%.
+
+10. MEMORY AND GENERALITY
+Both global Stokes and pressure-mass matrices use sparse CSR storage.
+There is no global dense LU matrix. AMG retains small coarse Cholesky solves.
+Sparse storage still needs memory: high polynomial degree and many nodes
+can be costly. The supplied compiler is 32-bit; a 64-bit compiler is
+recommended for larger studies. Raising max_equations is not a guarantee
+that the mesh fits RAM or that this basic AMG works well on severe aspect
+ratios. The code explicitly validates inputs and checks convergence.

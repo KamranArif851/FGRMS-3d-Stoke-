@@ -1,0 +1,26 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='650' viewBox='0 0 1100 650'><rect width='100%' height='100%' fill='white'/><g font-family='Times New Roman,serif'>
+<text x='36.00' y='38.00' font-size='24' fill='#16233c'>Node study | vy_L2</text>
+<text x='36.00' y='70.00' font-size='14' fill='#607087'>Fixed Q4/Q3 order. Mesh dimensions are stated in the report; largest mesh refines two directions.</text>
+<path d='M130.00 530.00L990.00 530.00' fill='none' stroke='#607087' stroke-width='1.00'/>
+<path d='M130.00 140.00L130.00 530.00' fill='none' stroke='#607087' stroke-width='1.00'/>
+<text x='118.00' y='553.00' font-size='12' fill='#35465f'>729</text>
+<text x='65.00' y='534.00' font-size='12' fill='#35465f'>-4.31</text>
+<text x='333.00' y='553.00' font-size='12' fill='#35465f'>1.49e+003</text>
+<text x='65.00' y='436.50' font-size='12' fill='#35465f'>-3.96</text>
+<text x='548.00' y='553.00' font-size='12' fill='#35465f'>2.24e+003</text>
+<text x='65.00' y='339.00' font-size='12' fill='#35465f'>-3.62</text>
+<text x='763.00' y='553.00' font-size='12' fill='#35465f'>3e+003</text>
+<text x='65.00' y='241.50' font-size='12' fill='#35465f'>-3.27</text>
+<text x='978.00' y='553.00' font-size='12' fill='#35465f'>3.76e+003</text>
+<text x='65.00' y='144.00' font-size='12' fill='#35465f'>-2.92</text>
+<text x='540.00' y='577.00' font-size='14' fill='#35465f'>Velocity nodes</text>
+<text x='130.00' y='127.00' font-size='14' fill='#35465f'>log10(nondimensional error / residual)</text>
+<circle cx='130.00' cy='182.09' r='5.00' fill='#df253b'/>
+<text x='130.00' y='167.09' font-size='14' fill='#35465f'>0.0008475 (729 nodes)</text>
+<path d='M130.00 182.09L546.94 410.02' fill='none' stroke='#df253b' stroke-width='2.00'/>
+<circle cx='546.94' cy='410.02' r='5.00' fill='#df253b'/>
+<text x='546.94' y='395.02' font-size='14' fill='#35465f'>0.0001305 (2197 nodes)</text>
+<path d='M546.94 410.02L990.00 487.91' fill='none' stroke='#df253b' stroke-width='2.00'/>
+<circle cx='990.00' cy='487.91' r='5.00' fill='#df253b'/>
+<text x='800.00' y='472.91' font-size='14' fill='#35465f'>6.888e-005 (3757 nodes)</text>
+</g></svg>

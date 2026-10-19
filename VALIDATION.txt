@@ -1,0 +1,21 @@
+VALIDATION OF THE GENERALIZED ITERATIVE-ONLY VERSION
+
+PASS: C solver and plotter compile with -Wall -Wextra -Wpedantic -Werror.
+PASS: Default 1000 km cube, Q4/Q3, 4x4x3 elements converges in 69 iterations.
+PASS: Default velocity/pressure coefficient CSVs agree exactly with the
+      previously tested FGMRES result (relative difference zero).
+PASS: 2x2x2 element input and 9x9x9 velocity-node input (p=4) produce
+      identical coefficient CSVs (relative difference zero).
+PASS: Unequal 600x400x200 km box, node input 9x9x9, mean pressure 2e6 Pa,
+      restart 30, max_iterations 250, tolerance 1e-10: converges in 55 iterations.
+PASS: Q2/Q1 polynomial benchmark with constant viscosity and changed inner
+      iteration limits converges in 40 outer iterations. Its coarse-grid FEM
+      errors are larger, as expected; tolerance is not continuum accuracy.
+PASS: max_iterations=1 stops with explicit nonconvergence; no success claimed.
+PASS: incompatible node count 10 at degree 4 is rejected before assembly.
+
+Successful raw outputs and exact input snapshots are in results/.
+The expected_nonconvergence and invalid_nodes cases deliberately fail.
+They are examples of validation behavior, not recommended production inputs.
+No LU solution is produced by this version.
+PASS: A failed rerun marks status as not converged; the plotter rejects old field files.

@@ -1,0 +1,1 @@
+{"method":"FGMRES","velocity_nodes":2197,"pressure_nodes":1000,"equations":4994,"iterations":69,"relative_tolerance":1e-12,"restart":60,"max_iterations":600,"true_relative_residual":7.2223485510557e-13,"setup_seconds":0.152,"solve_seconds":4.17,"converged":true}

@@ -1,0 +1,94 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1150' height='650' viewBox='0 0 1150 650'><rect width='100%' height='100%' fill='white'/><g font-family='Times New Roman,serif'>
+<text x='36.00' y='38.00' font-size='24' fill='#16233c'>FGMRES convergence: 2197 velocity nodes</text>
+<path d='M120.00 535.00L1060.00 535.00' fill='none' stroke='#607087' stroke-width='1.00'/>
+<path d='M120.00 135.00L120.00 535.00' fill='none' stroke='#607087' stroke-width='1.00'/>
+<text x='108.00' y='558.00' font-size='12' fill='#35465f'>0</text>
+<text x='55.00' y='539.00' font-size='12' fill='#35465f'>-13.3</text>
+<text x='343.00' y='558.00' font-size='12' fill='#35465f'>17.2</text>
+<text x='55.00' y='439.00' font-size='12' fill='#35465f'>-9.98</text>
+<text x='578.00' y='558.00' font-size='12' fill='#35465f'>34.5</text>
+<text x='55.00' y='339.00' font-size='12' fill='#35465f'>-6.65</text>
+<text x='813.00' y='558.00' font-size='12' fill='#35465f'>51.8</text>
+<text x='55.00' y='239.00' font-size='12' fill='#35465f'>-3.33</text>
+<text x='1048.00' y='558.00' font-size='12' fill='#35465f'>69</text>
+<text x='55.00' y='139.00' font-size='12' fill='#35465f'>0</text>
+<text x='570.00' y='582.00' font-size='14' fill='#35465f'>FGMRES iteration</text>
+<text x='120.00' y='122.00' font-size='14' fill='#35465f'>log10(relative residual)</text>
+<path d='M120.00 135.00L133.62 155.71' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M133.62 155.71L147.25 171.69' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M147.25 171.69L160.87 190.10' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M160.87 190.10L174.49 204.86' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M174.49 204.86L188.12 216.21' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M188.12 216.21L201.74 223.65' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M201.74 223.65L215.36 228.82' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M215.36 228.82L228.99 234.92' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M228.99 234.92L242.61 239.72' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M242.61 239.72L256.23 245.54' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M256.23 245.54L269.86 251.40' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M269.86 251.40L283.48 256.92' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M283.48 256.92L297.10 262.87' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M297.10 262.87L310.72 266.65' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M310.72 266.65L324.35 272.49' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M324.35 272.49L337.97 279.00' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M337.97 279.00L351.59 282.70' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M351.59 282.70L365.22 287.55' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M365.22 287.55L378.84 291.31' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M378.84 291.31L392.46 294.28' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M392.46 294.28L406.09 297.45' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M406.09 297.45L419.71 300.69' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M419.71 300.69L433.33 304.13' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M433.33 304.13L446.96 308.02' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M446.96 308.02L460.58 311.43' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M460.58 311.43L474.20 316.61' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M474.20 316.61L487.83 320.64' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M487.83 320.64L501.45 325.03' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M501.45 325.03L515.07 330.32' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M515.07 330.32L528.70 334.34' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M528.70 334.34L542.32 338.79' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M542.32 338.79L555.94 342.57' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M555.94 342.57L569.57 345.22' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M569.57 345.22L583.19 348.25' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M583.19 348.25L596.81 351.17' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M596.81 351.17L610.43 354.16' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M610.43 354.16L624.06 358.23' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M624.06 358.23L637.68 362.96' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M637.68 362.96L651.30 368.59' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M651.30 368.59L664.93 374.79' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M664.93 374.79L678.55 379.97' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M678.55 379.97L692.17 385.64' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M692.17 385.64L705.80 390.15' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M705.80 390.15L719.42 394.05' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M719.42 394.05L733.04 399.13' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M733.04 399.13L746.67 401.66' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M746.67 401.66L760.29 404.86' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M760.29 404.86L773.91 408.17' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M773.91 408.17L787.54 411.05' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M787.54 411.05L801.16 415.73' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M801.16 415.73L814.78 420.42' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M814.78 420.42L828.41 425.29' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M828.41 425.29L842.03 431.94' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M842.03 431.94L855.65 437.47' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M855.65 437.47L869.28 443.54' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M869.28 443.54L882.90 449.76' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M882.90 449.76L896.52 453.70' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M896.52 453.70L910.14 458.12' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M910.14 458.12L923.77 461.64' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M923.77 461.64L937.39 464.49' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M937.39 464.49L937.39 464.49' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M937.39 464.49L951.01 465.53' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M951.01 465.53L964.64 467.18' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M964.64 467.18L978.26 469.90' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M978.26 469.90L991.88 472.40' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M991.88 472.40L1005.51 476.07' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M1005.51 476.07L1019.13 481.13' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M1019.13 481.13L1032.75 486.84' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M1032.75 486.84L1046.38 493.91' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M1046.38 493.91L1060.00 500.15' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M1060.00 500.15L1060.00 500.15' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<path d='M1060.00 500.15L1060.00 500.15' fill='none' stroke='#df253b' stroke-width='1.70'/>
+<circle cx='120.00' cy='135.00' r='4.00' fill='#1459dc'/>
+<circle cx='937.39' cy='464.49' r='4.00' fill='#1459dc'/>
+<circle cx='1060.00' cy='500.15' r='4.00' fill='#1459dc'/>
+<circle cx='1060.00' cy='500.15' r='4.00' fill='#1459dc'/>
+<text x='36.00' y='615.00' font-size='16' fill='black'>Red: Arnoldi estimate. Blue dots: recomputed true residual at restart boundaries and termination.</text>
+</g></svg>

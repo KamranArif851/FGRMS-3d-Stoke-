@@ -1,0 +1,64 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='1000' viewBox='0 0 1400 1000'><rect width='100%' height='100%' fill='white'/><g font-family='Times New Roman,serif'>
+<text x='36.00' y='38.00' font-size='24' fill='#16233c'>Stress notation, pressure and the Stokes equation</text>
+<text x='55.00' y='95.00' font-size='23' fill='black'>div(σ′) − grad(P) + f = 0;    div(v) = 0</text>
+<text x='55.00' y='145.00' font-size='23' fill='black'>σ′ij = η (∂vi/∂xj + ∂vj/∂xi);       σ = σ′ − P I</text>
+<text x='100.00' y='205.00' font-size='24' fill='black'>Viscous stress σ′</text>
+<path d='M80.00 230.00L80.00 400.00' fill='none' stroke='black' stroke-width='2.00'/>
+<path d='M540.00 230.00L540.00 400.00' fill='none' stroke='black' stroke-width='2.00'/>
+<text x='100.00' y='270.00' font-size='25' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>xx</tspan></text>
+<text x='245.00' y='270.00' font-size='25' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>xy</tspan></text>
+<text x='390.00' y='270.00' font-size='25' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>xz</tspan></text>
+<text x='100.00' y='325.00' font-size='25' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>xy</tspan></text>
+<text x='245.00' y='325.00' font-size='25' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>yy</tspan></text>
+<text x='390.00' y='325.00' font-size='25' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>yz</tspan></text>
+<text x='100.00' y='380.00' font-size='25' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>xz</tspan></text>
+<text x='245.00' y='380.00' font-size='25' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>yz</tspan></text>
+<text x='390.00' y='380.00' font-size='25' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>zz</tspan></text>
+<text x='750.00' y='205.00' font-size='24' fill='black'>Total stress σ</text>
+<path d='M730.00 230.00L730.00 400.00' fill='none' stroke='black' stroke-width='2.00'/>
+<path d='M1190.00 230.00L1190.00 400.00' fill='none' stroke='black' stroke-width='2.00'/>
+<text x='750.00' y='270.00' font-size='25' fill='black'>σ<tspan baseline-shift='sub' font-size='70%'>xx</tspan></text>
+<text x='895.00' y='270.00' font-size='25' fill='black'>σ<tspan baseline-shift='sub' font-size='70%'>xy</tspan></text>
+<text x='1040.00' y='270.00' font-size='25' fill='black'>σ<tspan baseline-shift='sub' font-size='70%'>xz</tspan></text>
+<text x='750.00' y='325.00' font-size='25' fill='black'>σ<tspan baseline-shift='sub' font-size='70%'>xy</tspan></text>
+<text x='895.00' y='325.00' font-size='25' fill='black'>σ<tspan baseline-shift='sub' font-size='70%'>yy</tspan></text>
+<text x='1040.00' y='325.00' font-size='25' fill='black'>σ<tspan baseline-shift='sub' font-size='70%'>yz</tspan></text>
+<text x='750.00' y='380.00' font-size='25' fill='black'>σ<tspan baseline-shift='sub' font-size='70%'>xz</tspan></text>
+<text x='895.00' y='380.00' font-size='25' fill='black'>σ<tspan baseline-shift='sub' font-size='70%'>yz</tspan></text>
+<text x='1040.00' y='380.00' font-size='25' fill='black'>σ<tspan baseline-shift='sub' font-size='70%'>zz</tspan></text>
+<text x='55.00' y='450.00' font-size='18' fill='black'>Pressure subtracts from the three diagonal entries only. Shear entries are unchanged.</text>
+<text x='55.00' y='495.00' font-size='21' fill='black'>Values at x/Lx = 0.31, y/Ly = 0.37, z/Lz = 0.43 (MPa)</text>
+<text x='60.00' y='540.00' font-size='18' fill='black'>Quantity</text>
+<text x='280.00' y='540.00' font-size='18' fill='#1459dc'>Exact</text>
+<text x='520.00' y='540.00' font-size='18' fill='#df253b'>Numerical</text>
+<text x='800.00' y='540.00' font-size='18' fill='black'>Numerical − exact</text>
+<text x='60.00' y='585.00' font-size='20' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>xx</tspan></text>
+<text x='280.00' y='585.00' font-size='20' fill='#1459dc'>1.04734132</text>
+<text x='520.00' y='585.00' font-size='20' fill='#df253b'>1.04911364</text>
+<text x='800.00' y='585.00' font-size='20' fill='black'>0.0017723</text>
+<text x='60.00' y='633.00' font-size='20' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>yy</tspan></text>
+<text x='280.00' y='633.00' font-size='20' fill='#1459dc'>-1.42229553</text>
+<text x='520.00' y='633.00' font-size='20' fill='#df253b'>-1.42065148</text>
+<text x='800.00' y='633.00' font-size='20' fill='black'>0.001644</text>
+<text x='60.00' y='681.00' font-size='20' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>zz</tspan></text>
+<text x='280.00' y='681.00' font-size='20' fill='#1459dc'>0.37495421</text>
+<text x='520.00' y='681.00' font-size='20' fill='#df253b'>0.374185739</text>
+<text x='800.00' y='681.00' font-size='20' fill='black'>-0.00076847</text>
+<text x='60.00' y='729.00' font-size='20' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>xy</tspan></text>
+<text x='280.00' y='729.00' font-size='20' fill='#1459dc'>-0.410496922</text>
+<text x='520.00' y='729.00' font-size='20' fill='#df253b'>-0.407036615</text>
+<text x='800.00' y='729.00' font-size='20' fill='black'>0.0034603</text>
+<text x='60.00' y='777.00' font-size='20' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>xz</tspan></text>
+<text x='280.00' y='777.00' font-size='20' fill='#1459dc'>0.369351498</text>
+<text x='520.00' y='777.00' font-size='20' fill='#df253b'>0.369628888</text>
+<text x='800.00' y='777.00' font-size='20' fill='black'>0.00027739</text>
+<text x='60.00' y='825.00' font-size='20' fill='black'>σ′<tspan baseline-shift='sub' font-size='70%'>yz</tspan></text>
+<text x='280.00' y='825.00' font-size='20' fill='#1459dc'>0.0577609668</text>
+<text x='520.00' y='825.00' font-size='20' fill='#df253b'>0.0560255775</text>
+<text x='800.00' y='825.00' font-size='20' fill='black'>-0.0017354</text>
+<text x='60.00' y='873.00' font-size='20' fill='black'>P</text>
+<text x='280.00' y='873.00' font-size='20' fill='#1459dc'>-0.186975245</text>
+<text x='520.00' y='873.00' font-size='20' fill='#df253b'>-0.187210634</text>
+<text x='800.00' y='873.00' font-size='20' fill='black'>-0.00023539</text>
+<text x='55.00' y='970.00' font-size='16' fill='black'>Separate total-stress profiles, all three profile directions, 3-D surfaces and signed-error panels are also supplied.</text>
+</g></svg>
