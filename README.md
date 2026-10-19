@@ -1,69 +1,120 @@
-#Generalized 3-D Stokes Verification in C
+# Generalized 3D Stokes Verification in C
 
-Overview
+## Overview
 
-This program implements a generalized three-dimensional Stokes verification framework in C to evaluate the accuracy and convergence of finite element solutions against analytical benchmarks.
+This project implements a generalized three-dimensional Stokes solver in C to verify finite element solutions against analytical benchmarks.
 
-To run the program, review START_HERE.txt, configure the parameters in input.cfg, and execute run.bat. The generated results can be visualized using gallery.html, which compares analytical solutions (blue) with numerical solutions (red).
+The numerical framework uses restarted Flexible Generalized Minimal Residual (FGMRES) with a block Schur-complement preconditioner, algebraic aggregation-based multigrid (AMG) for velocity subproblems, and an inverse-viscosity-weighted pressure mass approximation. The global Stokes and pressure mass matrices are assembled directly in compressed sparse row (CSR) format.
 
-Numerical Methodology
+## Getting Started
 
-The Stokes system is solved using restarted Flexible Generalized Minimal Residual (FGMRES) with a block Schur-complement preconditioner. Algebraic aggregation-based multigrid (AMG) accelerates the velocity subproblems, while an inverse-viscosity-weighted pressure mass matrix approximates the pressure Schur complement. The global Stokes and pressure mass matrices are assembled directly in compressed sparse row (CSR) format.
+1. Read `START_HERE.txt`.
+2. Configure the simulation parameters in `input.cfg`.
+3. Run `run.bat` to compile and execute the solver.
+4. Open `gallery.html` to compare analytical (blue) and numerical (red) solutions.
 
-The framework supports polynomial degrees (p=2,3,4) and configurable domain dimensions, mesh resolution, physical parameters, integration orders, and solver tolerances through input.cfg.
+## Numerical Methodology
 
-Scope and Outputs
+The steady Stokes equations for an incompressible viscous fluid are
 
-The program is designed for manufactured-solution verification on rectangular three-dimensional domains under supported boundary conditions and viscosity distributions. It is intended for numerical validation rather than unrestricted geodynamic simulation.
+$$
+-\nabla \cdot \boldsymbol{\sigma} = \rho \mathbf{g}
+$$
 
-Key outputs include:
+$$
+\nabla \cdot \mathbf{u} = 0
+$$
 
-results/main_solver.json: Solver convergence and performance diagnostics.
+where:
 
-results/main_iter_stats.json: Finite element errors and numerical checks.
+- $\boldsymbol{\sigma}$ is the stress tensor.
+- $\rho$ is the density.
+- $\mathbf{g}$ is gravitational acceleration.
+- $\mathbf{u}$ is the velocity field.
 
-results/main_iter_history.csv: Iterative convergence history.
+For a Newtonian viscous material, the stress tensor can be expressed as
 
-results/main_iter_amg_*.csv: AMG hierarchy information.
+$$
+\boldsymbol{\sigma}
+= -p\mathbf{I} + 2\eta\boldsymbol{\dot{\varepsilon}}
+$$
 
-Additional CSV and VTK files: Numerical fields, stresses, and profiles.
+where $p$ is pressure, $\mathbf{I}$ is the identity tensor, $\eta$ is viscosity, and $\boldsymbol{\dot{\varepsilon}}$ is the strain-rate tensor.
 
-figures/ and gallery.html: Visual comparisons of analytical and numerical solutions.
+The solver supports polynomial degrees $p=2,3,4$ and configurable mesh dimensions, physical parameters, integration orders, and convergence tolerances.
 
-study_gallery.html and node_comparison.csv: Mesh-refinement comparison results.
+For polynomial degree $p$, the numbers of velocity and pressure nodes are
 
-Reported error measures are dimensionless unless physical units are explicitly specified. The true relative residual is defined as
+$$
+N_v=(pn_x+1)(pn_y+1)(pn_z+1)
+$$
 
-[
-r_{\mathrm{true}}=
-\frac{|\mathbf b-K\mathbf x|_2}
-{\max(|\mathbf b|_2,10^{-30})}.
-]
+$$
+N_p=((p-1)n_x+1)((p-1)n_y+1)((p-1)n_z+1)
+$$
 
-The reported sparse matrix storage excludes AMG hierarchies, temporary structures, and other solver allocations, and therefore does not represent total peak memory usage.
+where $n_x$, $n_y$, and $n_z$ are the element counts along the three coordinate directions.
 
-Code Organization
+## Project Structure
 
-iteration.c: Input processing, assembly, iterative solution, and output.
+| File | Description |
+|---|---|
+| `iteration.c` | Main solver workflow and output generation |
+| `stokes_fem.c` | Finite element formulation, analytical solutions, and error evaluation |
+| `assemble_sparse.h` | Sparse finite element assembly |
+| `iterative.h` | FGMRES, AMG, inner CG, and block preconditioning |
+| `plots.c` | Field evaluation and SVG plotting |
+| `comparison_plots.c` | Analytical comparisons, residual plots, and mesh studies |
+| `input.cfg` | Simulation configuration |
+| `VALIDATION.txt` | Validation tests and reference results |
 
-stokes_fem.c: Finite element basis functions, analytical solutions, boundary conditions, and error evaluation.
+## Outputs
 
-assemble_sparse.h: Sparse finite element assembly.
+The program generates solver diagnostics, convergence histories, finite element error statistics, field data, and visualizations.
 
-iterative.h: Sparse algebra, AMG, inner CG, block preconditioning, and FGMRES.
+- `results/main_solver.json` — Solver iterations, true relative residual, and timings.
+- `results/main_iter_stats.json` — Numerical errors and diagnostic measures.
+- `results/main_iter_history.csv` — Iterative convergence history.
+- `results/main_iter_amg_x.csv` — AMG hierarchy information for the x-velocity block, with corresponding files for y and z.
+- `gallery.html` — Analytical and numerical solution comparisons.
+- `study_gallery.html` — Three-mesh comparison gallery.
+- `node_comparison.csv` — Mesh error comparison.
+- `figures/` — SVG plots and visualizations.
 
-plots.c: Field evaluation and SVG plotting.
+## Benchmark Validation
 
-comparison_plots.c: Solution comparisons, residual plots, and mesh studies.
+The reference benchmark uses a $1000\ \mathrm{km}$ cubic domain with a Q4/Q3 finite element pair and a $4\times4\times3$ element mesh.
 
-verify_coefficients.c: Optional regression checking.
+| Quantity | Reference result |
+|---|---:|
+| Velocity nodes | 3,757 |
+| Pressure nodes | 1,690 |
+| Algebraic equations | 9,116 |
+| FGMRES iterations | 69 |
+| True relative residual | $9.32\times10^{-13}$ |
+| Relative velocity $L_2$ error | 0.0442455% |
+| Relative pressure $L_2$ error | 0.150469% |
 
-Benchmark Validation
+The true relative residual is calculated as
 
-The reference benchmark uses a (1000\ \mathrm{km}) cubic domain, a Q4/Q3 finite element pair, and a (4\times4\times3) element mesh. The discretization contains 3,757 velocity nodes, 1,690 pressure nodes, and 9,116 algebraic equations.
+$$
+r_{\mathrm{true}} =
+\frac{\|\mathbf{b}-K\mathbf{x}\|_2}
+{\max(\|\mathbf{b}\|_2,10^{-30})}
+$$
 
-The documented results show convergence in 69 FGMRES iterations, with a true relative residual of approximately (9.32\times10^{-13}). The relative (L_2) errors are approximately 0.0442455% for velocity and 0.150469% for pressure.
+where $K$ is the assembled Stokes matrix, $\mathbf{x}$ is the numerical solution, and $\mathbf{b}$ is the right-hand-side vector.
 
-These values provide reference results for validating the implementation under the same mesh, physical parameters, boundary conditions, and solver settings. Additional verification can be performed through mesh refinement, residual analysis, and comparison of numerical and analytical fields.
+These reference values can be used to assess reproducibility under the same mesh, physical parameters, boundary conditions, and solver tolerances.
 
-For further details, consult VALIDATION.txt. Solver performance may vary with mesh resolution, domain aspect ratio, viscosity distribution, and convergence settings.
+## Limitations
+
+This implementation is intended for manufactured-solution verification on rectangular three-dimensional domains, rather than unrestricted geodynamic simulation.
+
+The supported benchmarks require consistent analytical solutions, forcing terms, boundary conditions, and viscosity distributions. Solver convergence and computational cost may vary with mesh resolution, domain aspect ratio, viscosity distribution, and numerical settings.
+
+See `VALIDATION.txt` for additional validation details.
+
+## License
+
+No license has been specified. Add a license file if you intend to distribute the project under particular reuse conditions.
